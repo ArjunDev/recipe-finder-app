@@ -37,7 +37,7 @@ export default function GlobalState({children}){
       cpyFavoriteList.push(currentItem);
     //pushing the currentItem to fav array if index not present
     }else{
-      cpyFavoriteList.splice(index);
+      cpyFavoriteList.splice(index, 1);
     // when clicked on mark as fav, removing it from favlist if its already present.
     // basically this if else is to toggle mark as fav button
     }
