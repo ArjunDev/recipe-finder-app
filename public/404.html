@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+
+      // conetext: if am at arjundev.github.io/fav0rites/ then refresh a page it was throwing 404 error. following below fixed the issue
+
+      // when refreshed the page Redirect to the homepage (https://arjundev.github.io/recipe-finder-app/. ["/recipe-finder-app" is a github repo.]
+      // also need to change BrowserRouter to HashRouter. see main.jsx
+      window.location.replace(window.location.origin + "/recipe-finder-app");
+    </script>
+  </body>
+</html>
