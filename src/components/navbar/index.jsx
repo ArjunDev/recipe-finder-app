@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import '/src/index.css'
 import { GlobalContext } from '../context';
 
 const Navbar = () => {
@@ -11,37 +10,44 @@ const Navbar = () => {
     handleFromSubmit} = useContext(GlobalContext);
 
   //console.log(searchParam)
+  
   return (
-    <div>
-      <div className='flex justify-center items-center w-screen bg-slate-100 py-4 mb-4'>
+      <div className='flex justify-center items-center bg-gray-800 py-4 mb-4 sm:w-full'>
         <form 
-          className='flex justify-evenly items-center w-screen'
+          className='flex justify-center items-center sm:gap-x-10'
           onSubmit={handleFromSubmit}>
-          <div >
+          <div>
             <NavLink 
-              className='text-orange-500 hover:text-orange-700 mx-2 font-bold'
-              to={"/"} 
-            >FoodRecipe!</NavLink>
+              className='text-orange-500 hover:text-orange-700 hover:underline mr-2 font-bold'
+              to={"/home"} 
+            >RecipeApp</NavLink>
           </div>
+          <div className='flex w-full max-w-3xs'>
           <input 
-            className='max-w-96 w-60 bg-white rounded-lg p-1.5 shadow-orange-300 shadow-md focus:border-b-2  focus:border-orange-500 focus:outline-0'
+            className='bg-gray-100 rounded-lg p-1.5 mr-3 shadow-md shadow-orange-400/50 focus:border-b-2 border-b-2 border-transparent focus:border-orange-500 w-full max-w-[200px] focus:outline-none sm:min-w-3xs'
             type="text"
             placeholder='Search a recipe...'
             name='search'
+            autoComplete='off'
             value={searchParam}
             onChange={(event)=> setSearchParam(event.target.value)}
           />
-          <ul className='flex justify-evenly items-center text-orange-500 font-bold'>
-            <li className='mx-5 hover:text-orange-700'>
-              <NavLink to={"/"} >Home</NavLink>
+          </div>
+          <ul className='flex gap-3 text-orange-500 font-bold sm:gap-6'>
+            <li>
+              <NavLink 
+                className={({isActive})=> isActive ? 'underline' : 'hover:text-orange-700 hover:underline'}
+                to={"/home"} >Home</NavLink>
             </li>
-            <li className='hover:text-orange-700'>
-              <NavLink to={"/favorites"}>Favorites</NavLink>
+            <li>
+              <NavLink 
+                to={"/favorites"}
+                className={({isActive})=> isActive ? 'underline' : 'hover:text-orange-700 hover:underline'}
+              >Favorites</NavLink>
             </li>
           </ul>
         </form>
       </div>
-    </div>
   )
 }
 

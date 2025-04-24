@@ -24,7 +24,7 @@ const Details = () => {
   //console.log(recipeDetailsData);
   return (
     <div className='flex justify-center items-center'>
-    <div className='flex justify-center items-center flex-col gap-2 rounded-md w-96 bg-slate-100 drop-shadow-lg overflow-hidden px-4 py-4'>
+    <div className='flex justify-center items-center flex-col gap-2 rounded-md w-90 bg-slate-100 drop-shadow-lg overflow-hidden px-4 py-4'>
       <img 
         className='object-cover rounded-md h-40 w-80 bg-slate-100 drop-shadow-lg'
         src={recipeDetailsData?.recipe?.image_url} 
