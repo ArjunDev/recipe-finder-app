@@ -33,9 +33,7 @@ const RecipeSummaryModal = () => {
       id="close-btn"
       className="absolute top-2 right-2 text-xl rounded bg-red-500 px-2 hover:bg-red-400 transition hover:cursor-pointer"
       onClick={handleCloseBtn}
-    >
-      X
-    </button>
+    >X</button>
   </div>
 </div>
 
