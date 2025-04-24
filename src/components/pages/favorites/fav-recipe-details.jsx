@@ -11,7 +11,7 @@ const FavRecipeDetails = () => {
 
   useEffect(() => {
     if (!favRecipe?.length) {
-      navigate("/project/recipeapp/favorites");
+      navigate("/favorites");
     }
   }, [favRecipe]);
 
